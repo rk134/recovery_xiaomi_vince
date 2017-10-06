@@ -39,6 +39,13 @@ TARGET_USES_64_BIT_BINDER := true
 # Assert
 TARGET_OTA_ASSERT_DEVICE := vince
 
+# Bootloader
+TARGET_BOOTLOADER_BOARD_NAME := msm8953
+TARGET_NO_BOOTLOADER := true
+
+# Crypto
+TARGET_HW_DISK_ENCRYPTION := true
+
 # File systems
 BOARD_HAS_LARGE_FILESYSTEM := true
 #BOARD_RECOVERYIMAGE_PARTITION_SIZE := 29958144 # This is the maximum known partition size, but it can be higher, so we just omit it
