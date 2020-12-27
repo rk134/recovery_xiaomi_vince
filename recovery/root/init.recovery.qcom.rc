@@ -30,11 +30,8 @@
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+    export LD_LIBRARY_PATH /vendor/lib64:/vendor/lib64/hw
     export ANDROID_ROOT /system_root
-    chmod 0660 /dev/qseecom
-    chown system drmrpc /dev/qseecom
-    chmod 0664 /dev/ion
-    chown system system /dev/ion
 
     start hwservicemanager
     start servicemanager
@@ -46,8 +43,7 @@ on boot
 on property:ro.crypto.state=encrypted && property:ro.crypto.type=file
     install_keyring
 
-on property:ro.crypto.state=encrypted
-    start sbinqseecomd
+import /init.recovery.qcom_decrypt.rc
 
 on property:vendor.sys.listeners.registered=true
     start keymaster-3-0
@@ -62,13 +58,6 @@ on property:twrp.all.users.decrypted=true
     stop sbinqseecomd
     stop keymaster-3-0
     stop gatekeeper-1-0
-
-# Separate copy needed to use /sbin/linker64 instead of /system/bin/linker64
-service sbinqseecomd /sbin/qseecomd
-    user root
-    group root
-    disabled
-    seclabel u:r:recovery:s0
 
 service hwservicemanager /sbin/hwservicemanager
     user root
