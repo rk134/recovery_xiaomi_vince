@@ -51,6 +51,7 @@ TW_INCLUDE_CRYPTO_FBE := true
 TW_INCLUDE_FBE := true
 
 # File systems
+BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 #BOARD_RECOVERYIMAGE_PARTITION_SIZE := 29958144 # This is the maximum known partition size, but it can be higher, so we just omit it
 BOARD_SYSTEMIMAGE_PARTITION_TYPE := ext4
