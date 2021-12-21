@@ -77,6 +77,7 @@ BOARD_KERNEL_CMDLINE := \
 	 earlycon=msm_hsl_uart,0x78af000 \
 	 audit=0 \
 	 androidboot.selinux=permissive \
+    androidboot.usbconfigfs=true loop.max_part=7 \
 	 buildvariant=eng
 
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.gz-dtb
@@ -96,11 +97,13 @@ TARGET_KERNEL_CONFIG := vince_defconfig
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8953
+QCOM_BOARD_PLATFORMS += $(TARGET_BOARD_PLATFORM)
 
 # Hack: prevent anti rollback
-PLATFORM_SECURITY_PATCH := 2099-12-31
-VENDOR_SECURITY_PATCH := 2099-12-31
-PLATFORM_VERSION := 16.1.0
+PLATFORM_VERSION := 127
+PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
+PLATFORM_SECURITY_PATCH := 2127-12-31
+VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 
 # Encryption
 BOARD_USES_QCOM_DECRYPTION := true
@@ -130,7 +133,6 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     libashmemd_client \
     libcap \
     libdrm \
-    libhardware_legacy \
     libicui18n \
     libion \
     libicuuc \
@@ -146,7 +148,6 @@ TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libashmemd_client.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libcap.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libdrm.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libhardware_legacy.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libicui18n.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libicuuc.so \
