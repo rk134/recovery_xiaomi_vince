@@ -21,6 +21,5 @@
 /sec                emmc      /dev/block/bootdevice/by-name/sec                                     flags=display="Sec";
 /persist            ext4      /dev/block/bootdevice/by-name/persist                                 flags=display="Persist";
 /persist_image      emmc      /dev/block/bootdevice/by-name/persist                                 flags=display="Persist image";backup=1;flashimg=1;
-/persist_image      emmc      /dev/block/bootdevice/by-name/persist                                 flags=display="Persist image";backup=1;flashimg=1;
 /external_sd        auto      /dev/block/mmcblk1p1                                                  flags=display="External_sd";
 /usb-otg            auto      /dev/block/sda1                                                       flags=display="Usb-otg";
