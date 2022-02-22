@@ -1,7 +1,7 @@
 [![PBRP Organization CI](https://github.com/PitchBlackRecoveryProject/android_device_xiaomi_vince-pbrp/actions/workflows/pbrp-organization-ci.yml/badge.svg?branch=android-9.0)](https://github.com/PitchBlackRecoveryProject/android_device_xiaomi_vince-pbrp/actions/workflows/pbrp-organization-ci.yml)
 
 # Recovery Tree for Xiaomi Redmi 5 Plus (vince) 
-## Thanks to Seba!
+## Thanks to Seba and Starlight!
 
 ## Spec Sheet
 
