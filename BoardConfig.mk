@@ -66,7 +66,20 @@ TARGET_INIT_VENDOR_LIB := libinit_vince
 TARGET_RECOVERY_DEVICE_MODULES := libinit_vince
 
 # Kernel
-BOARD_KERNEL_CMDLINE := ignore_loglevel console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_hsl_uart,0x78af000 audit=0 androidboot.selinux=permissive buildvariant=eng
+BOARD_KERNEL_CMDLINE := \
+	ignore_loglevel \
+	console=ttyHSL0,115200,n8 \
+	androidboot.console=ttyHSL0 \
+	androidboot.hardware=qcom \
+	 msm_rtb.filter=0x237 \
+	 ehci-hcd.park=3 \
+	 lpm_levels.sleep_disabled=1 \
+	 androidboot.bootdevice=7824900.sdhci \
+	 earlycon=msm_hsl_uart,0x78af000 \
+	 audit=0 \
+	 androidboot.selinux=permissive \
+	 buildvariant=eng
+
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.gz-dtb
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
