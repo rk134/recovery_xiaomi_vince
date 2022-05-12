@@ -20,7 +20,7 @@
 $(call inherit-product, device/xiaomi/vince/device.mk)
 
 # Inherit from our custom product configuration
-$(call inherit-product, vendor/pbrp/config/common.mk)
+$(call inherit-product, vendor/pb/config/common.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := vince
